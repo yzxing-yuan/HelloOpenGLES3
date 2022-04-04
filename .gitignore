@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+Qt user file
+HelloOpenGLES3/HelloOpenGLES3.pro.user
+
+Qt build directory
+build-HelloOpenGLES3-Desktop_Qt_5_14_2_GCC_64bit-Debug/
+

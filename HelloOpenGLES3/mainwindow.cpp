@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWindow *parent)
     esContext.height = this->height();
     //m_pIGlesHandle = new HelloTriangle();
     m_pIGlesHandle = new MatrixTransform();
+    //m_pIGlesHandle = new Illumination();
     m_pIGlesHandle->initialize(esContext);
 
     m_timer.setInterval(10);

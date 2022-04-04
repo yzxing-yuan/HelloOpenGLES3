@@ -2,16 +2,16 @@
 #define ILLUMINATION_HPP
 
 #include "IGlesHandle.hpp"
-#include "common.hpp"
+#include "Common/common.hpp"
 
 #if 1
-const GLfloat g_vertices[] =
+static const GLfloat g_vertices[] =
 {  // 位置              // 颜色
     0.0f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
    -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
     0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f
 };
-const GLuint g_indices[] = {0, 1, 2};
+static const GLuint g_indices[] = {0, 1, 2};
 #endif
 
 static bool init(ESContext *esContext)
@@ -188,18 +188,18 @@ static void update(ESContext *esContext, float deltaTime)
 #endif
 }
 
-class MatrixTransform : public IGlesHandle
+class Illumination : public IGlesHandle
 {
 private:
     ESContext m_esContext;
 
 public:
-    MatrixTransform()
+    Illumination()
     {
         memset(&m_esContext, 0, sizeof(m_esContext));
     }
 
-    ~MatrixTransform()
+    ~Illumination()
     {
         release();
     }
@@ -210,7 +210,7 @@ public:
         m_esContext.initFunc = init;
         m_esContext.drawFunc = draw;
         m_esContext.updateFunc = update;
-        return Common::esMain(m_esContext, ":/vshader_illumination.glsl", ":/fshader_illumination.glsl");
+        return Common::esMain(m_esContext, ":/shaders/vshader_illumination.glsl", ":/shaders/fshader_illumination.glsl");
     }
 
     void render() override

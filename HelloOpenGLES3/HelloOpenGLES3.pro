@@ -25,31 +25,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Common/esTransform.c \
-    esShapes.c \
-        main.cpp \
-        mainwindow.cpp \
-    esUtil.c \
-    hellotriangle.cpp
+    Common/esShapes.c \
+    Common/esUtil.c \
+    main.cpp \
+    mainwindow.cpp
 
 HEADERS += \
-    IGlesHandle.hpp \
-    common.hpp \
-    illumination.hpp \
-        mainwindow.h \
-    esUtil.h \
+    Common/common.hpp \
+    Common/esUtil.h \
     GLES3/gl3.h \
     GLES3/gl3platform.h \
     EGL/egl.h \
     EGL/eglext.h \
     EGL/eglplatform.h \
     KHR/khrplatform.h \
-    hellotriangle.h \
-    matrixtransform.hpp
+    hellotriangle.hpp \
+    mainwindow.h \
+    IGlesHandle.hpp \
+    matrixtransform.hpp \
+    illumination.hpp
 
 #Windows
-LIBS += -L. -lEGL -lGLESv2
+#LIBS += -L. -lEGL -lGLESv2
 #Linux
-#LIBS += -L/usr/lib/x86_64-linux-gnu -lEGL -lGLESv2
+LIBS += -L/usr/lib/x86_64-linux-gnu -lEGL -lGLESv2
 
 RESOURCES += \
     shaders.qrc

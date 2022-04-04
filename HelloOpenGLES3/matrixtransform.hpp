@@ -2,16 +2,16 @@
 #define MATRIXTRANSFORM_HPP
 
 #include "IGlesHandle.hpp"
-#include "common.hpp"
+#include "Common/common.hpp"
 
 #if 1
-const GLfloat g_vertices[] =
+static const GLfloat g_vertices[] =
 {  // 位置              // 颜色
     0.0f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,
    -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,
     0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f
 };
-const GLuint g_indices[] = {0, 1, 2};
+static const GLuint g_indices[] = {0, 1, 2};
 #endif
 
 static bool init(ESContext *esContext)
@@ -197,7 +197,7 @@ public:
         m_esContext.initFunc = init;
         m_esContext.drawFunc = draw;
         m_esContext.updateFunc = update;
-        return Common::esMain(m_esContext, ":/vshader_transform.glsl", ":/fshader_transform.glsl");
+        return Common::esMain(m_esContext, ":/shaders/vshader_transform.glsl", ":/shaders/fshader_transform.glsl");
     }
 
     void render() override

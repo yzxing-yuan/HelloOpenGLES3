@@ -3,9 +3,9 @@
 
 #include <QWindow>
 #include <QTimer>
-//#include "hellotriangle.h"
-//#include "matrixtransform.hpp"
-#include "illumination.hpp"
+//#include "hellotriangle.hpp"
+#include "matrixtransform.hpp"
+//#include "illumination.hpp"
 
 class MainWindow : public QWindow
 {

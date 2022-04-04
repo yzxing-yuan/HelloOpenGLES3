@@ -1,7 +1,7 @@
 #ifndef IGLESHANDLE_HPP
 #define IGLESHANDLE_HPP
 
-#include "esUtil.h"
+#include "Common/esUtil.h"
 
 class IGlesHandle
 {
